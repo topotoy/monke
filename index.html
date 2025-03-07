@@ -5,31 +5,30 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="./favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Interact Wave</title>
+  <title>Return to Monke</title>
   <link rel="author" href="https://topotoy.github.io/" />
 
   <!-- HTML Meta Tags -->
-  <title>Interact Wave</title>
-  <meta name="description" content="Interact with wave.">
-  <meta name="keywords" content="Optics">
+  <title>Return to Monke</title>
+  <meta name="description" content="Return to Monke.">
+  <meta name="keywords" content="Physics">
 
   <!-- Facebook Meta Tags -->
   <meta property="og:url" content="https://topotoy.github.io/voxelforest/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Interact Wave">
-  <meta property="og:description" content="Interact with wave.">
+  <meta property="og:title" content="Return to Monke">
+  <meta property="og:description" content="Return to Monke.">
   <meta property="og:image" content="https://topotoy.github.io/voxelforest/cover.jpg">
 
   <!-- Twitter Meta Tags -->
-  <meta name="twitter:card" content="Shader based wave propagation method.">
+  <meta name="twitter:card" content="WASM-based topotoy videogame.">
   <meta property="twitter:domain" content="topotoy.github.io">
   <meta property="twitter:url" content="https://topotoy.github.io/voxelforest/">
-  <meta name="twitter:title" content="Interact Wave">
-  <meta name="twitter:description" content="Interact with wave.">
+  <meta name="twitter:title" content="Return to Monke">
+  <meta name="twitter:description" content="Return to Monke.">
   <meta name="twitter:image" content="https://topotoy.github.io/voxelforest/cover.jpg">
 
-
-  <!--  <link rel="stylesheet" crossorigin href="./assets/index-DWfvFEcn.css"> -->
+  <!-- <link rel="stylesheet" crossorigin href="./assets/index-DWfvFEcn.css"> -->
 
 </head>
 
@@ -38,72 +37,45 @@
     <div class="container">
       <button id="toggleButton">Toggle mode</button>
       <canvas id="canvas" width="800" height="600" oncontextmenu="event.preventDefault()"></canvas>
-      <!--        <div id="canvas" width="100px" height="100px">
-      <div class="placeholder">
-            <p>Loading...</p>
-          </div>
-          <div class="overlay">
-            <svg width="100%" viewBox="0 0 100 100">
-            </svg>
-          </div>
-      </div>-->
+      <!--  <div id="canvas" width="100px" height="100px">
+        <div class="placeholder">
+              <p>Loading...</p>
+            </div>
+            <div class="overlay">
+              <svg width="100%" viewBox="0 0 100 100">
+              </svg>
+            </div>
+        </div>-->
       <p>Hold and drag to interact.</p>
       <h2>About</h2>
-      <p>A demo by <a href="https://topotoy.github.io" target="_blank">Hans Chiu</a>.</p>
-      <p>This is a shader based wave propagation demonstration. </p>
-      <a href="https://github.com/topotoy/voxelforest" target="_blank">GitHub Repo</a>
+      <p>A demo by <a href="https://topotoy.github.io" target="_blank">Topotoy Labs</a>.</p>
+      <p>Videogame where you must set free your inner monkey.</p>
+      <!--      <a href="https://github.com/topotoy/voxelforest" target="_blank">GitHub Repo</a>-->
     </div>
   </div>
 </body>
 
-
 <script>
-  /* Shared between editor/viewer. */
-  var Module = {
+  var Module =
+  {
     preRun: [],
     postRun: [],
     canvas: (function () {
       var canvas = document.querySelector("#canvas");
-      canvas.addEventListener("webglcontextlost", function (e) {
-        alert("WebGL context lost. Please reload the page."); e.preventDefault();
-      }, false);
+      canvas.addEventListener("webglcontextlost", function (e) { alert("WebGL context lost. Please reload the page."); e.preventDefault(); }, false);
       return canvas;
     })(),
     locateFile: function (path, prefix) {
-      if (path.endsWith(".wasm")) { return (/*g_webex_basedir*/"./" + path); }
-      if (path.endsWith(".data")) { return (/*g_webex_basedir*/"./" + path); }
-      return prefix + path;
+      if (path.endsWith(".wasm")) { return ( /*g_webex_basedir*/"./" + path); }
+      if (path.endsWith(".data")) { return ( /*g_webex_basedir*/"./" + path); }
+      return (prefix + path);
     },
     onRuntimeInitialized: function () { }
   };
-  function webex_in(op, d0, d1, d2) {
-    Module.ccall("webex_in", null, ["string", "string", "string", "string"], [op, d0, d1, d2]);
-  }
   var webex_is_alive = false;
-  function webex_out(op, d0, d1, d2) {
-    webex_is_alive = true;
-  }
+  function webex_in(op, d0, d1, d2) { Module.ccall("webex_in", null, ["string", "string", "string", "string"], [op, d0, d1, d2]); }
+  function webex_out(op, d0, d1, d2) { webex_is_alive = true; }
 </script>
-<script src="./monke-58598.js" type="text/javascript"></script>" type="text/javascript"></script>" type="text/javascript"></script>
-<!--
-<script type="module" crossorigin src="./monke-58570.js"></script>
-<script src="https://maverickexcelsior.com/htdocs/wp-content/builds/wasm/webex-viewer-version.js" type="text/javascript"></script>
-<script src="https://maverickexcelsior.com/htdocs/wp-content/builds/wasm/webex-viewer-module.js" type="text/javascript"></script>
--->
-<!--
-<script type='text/javascript'>
-  document.addEventListener("DOMContentLoaded", () => {
-    const js = document.createElement("script");
-    js.setAttribute('src', (g_webex_basedir + g_webex_viewer_version_js));
-    js.onload = () => {
-      Module.json = {
-        'set_clear_color': 'black',
-        'open_scene': 'https://maverickexcelsior.com/maverickexcelsior-demo.webex',
-      };
-    };
-    document.head.appendChild(js);
-  });
-</script>
--->
+<script src="./monke-58599.js" type="text/javascript"></script>" type="text/javascript"></script>
 
 </html>
