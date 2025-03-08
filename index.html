@@ -6,7 +6,7 @@
   <link rel="icon" type="image/png" href="./favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Return to Monke</title>
-  <link rel="author" href="https://topotoy.github.io/" />
+  <link rel="author" href="https://topotoy.com/" />
 
   <!-- HTML Meta Tags -->
   <title>Return to Monke</title>
@@ -14,19 +14,19 @@
   <meta name="keywords" content="Physics">
 
   <!-- Facebook Meta Tags -->
-  <meta property="og:url" content="https://topotoy.github.io/monke/">
+  <meta property="og:url" content="https://topotoy.com/monke/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Return to Monke">
   <meta property="og:description" content="Return to Monke.">
-  <meta property="og:image" content="https://topotoy.github.io/monke/cover.jpg">
+  <meta property="og:image" content="https://topotoy.com/monke/cover.jpg">
 
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="WASM-based topotoy videogame.">
-  <meta property="twitter:domain" content="topotoy.github.io">
-  <meta property="twitter:url" content="https://topotoy.github.io/monke/">
+  <meta property="twitter:domain" content="topotoy.com">
+  <meta property="twitter:url" content="https://topotoy.com/monke/">
   <meta name="twitter:title" content="Return to Monke">
   <meta name="twitter:description" content="Return to Monke.">
-  <meta name="twitter:image" content="https://topotoy.github.io/monke/cover.jpg">
+  <meta name="twitter:image" content="https://topotoy.com/monke/cover.jpg">
 
   <!-- <link rel="stylesheet" crossorigin href="./assets/css.css"> -->
 </head>
@@ -38,7 +38,7 @@
       <canvas id="canvas" width="800" height="600" oncontextmenu="event.preventDefault()"></canvas>
       <p>Hold and drag to interact.</p>
       <h2>About</h2>
-      <p>A demo by <a href="https://topotoy.github.io" target="_blank">Topotoy Labs</a>.</p>
+      <p>A demo by <a href="https://topotoy.com" target="_blank">Topotoy Labs</a>.</p>
       <p>Videogame where you must set free your inner monkey.</p>
       <a href="https://github.com/topotoy/monke" target="_blank">GitHub Repo</a>
     </div>
@@ -56,8 +56,8 @@
       return canvas;
     })(),
     locateFile: function (path, prefix) {
-      if (path.endsWith(".wasm")) { return ( /*g_webex_basedir*/"./" + path); }
-      if (path.endsWith(".data")) { return ( /*g_webex_basedir*/"./" + path); }
+      if (path.endsWith(".wasm")) { return ("./" + path); }
+      if (path.endsWith(".data")) { return ("./" + path); }
       return (prefix + path);
     },
     onRuntimeInitialized: function () { }
@@ -66,6 +66,6 @@
   function webex_in(op, d0, d1, d2) { Module.ccall("webex_in", null, ["string", "string", "string", "string"], [op, d0, d1, d2]); }
   function webex_out(op, d0, d1, d2) { webex_is_alive = true; }
 </script>
-<script src="./monke-58602.js" type="text/javascript"></script>" type="text/javascript"></script>
+<script src="./monke-58648.js" type="text/javascript"></script>
 
 </html>
