@@ -82,13 +82,16 @@
       if (path.endsWith(".data")) { return ("./" + path); }
       return (prefix + path);
     },
-    onRuntimeInitialized: function () { }
+    onRuntimeInitialized: function () { },
+    contextAttributes: {
+      premultipliedAlpha: false
+    }
   };
   var webex_is_alive = false;
   function webex_in(op, d0, d1, d2) { Module.ccall("webex_in", null, ["string", "string", "string", "string"], [op, d0, d1, d2]); }
   function webex_out(op, d0, d1, d2) { webex_is_alive = true; }
 </script>
 
-<script src="./monke-58929.js" type="text/javascript"></script>
+<script src="./monke-59135.js" type="text/javascript"></script>
 
 </html>
